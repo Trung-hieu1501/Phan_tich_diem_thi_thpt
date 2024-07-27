@@ -7,16 +7,16 @@ import nest_asyncio
 import time
 from bs4 import BeautifulSoup
 
-# url = 'https://api-university-2022.beecost.vn/university/lookup_examiner?id='
-# cum_thi = []
-# for i in range(1000001, 70000001, 1000000):
-#     response = requests.get(url+str(i))
-#     if response.status_code == 200:
-#         cum_thi.append({
-#         'ma_cum': int(i/1000000),
-#         'cum': response.json().get('data', {}).get('test_location')
-#         })
-# cum_thi = pd.DataFrame(cum_thi)
+url = 'https://api-university-2022.beecost.vn/university/lookup_examiner?id='
+cum_thi = []
+ for i in range(1000001, 70000001, 1000000):
+     response = requests.get(url+str(i))
+     if response.status_code == 200:
+         cum_thi.append({
+         'ma_cum': int(i/1000000),
+         'cum': response.json().get('data', {}).get('test_location')
+         })
+ cum_thi = pd.DataFrame(cum_thi)
 
 cum_thi = pd.read_csv('D:/Downloads/diem_thi_2024/cum_thi.csv')
 # # Áp dụng nest_asyncio để có thể chạy vòng lặp sự kiện bên trong một vòng lặp đã tồn tại
