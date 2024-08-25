@@ -103,9 +103,9 @@ async def main():
                 if error_count > max_errors:
                     print('Too many errors, moving to next index')
 
-# Chạy chương trình chính
+
 start = time.perf_counter()
-data = [] # Thay thế bằng dữ liệu thực tế
+data = []
 asyncio.run(main())
 #await main()   #Chạy bằng Spyder hoặc jupyter
 data = pd.DataFrame(data)
