@@ -5,7 +5,7 @@ import seaborn as sns
 
 data = {}
 for i in range(1,5):
-    data[i] = pd.read_csv(f"D:/Downloads/diem_thi_2024/data/diem_thi_202{i}.csv")
+    data[i] = pd.read_csv(f"/diem_thi_202{i}.csv")
 
 data[1].drop(columns = ["Unnamed: 0", "Cum_thi"], inplace = True)
 data[1].rename(columns = {'SBD':"id", 'Toan' :"Toán", 'Ngu_van': "Văn", 'Ngoai_ngu':"Ngoại ngữ", 'Vat_ly':"Lí", 'Hoa_hoc': "Hóa", 'Sinh_hoc': "Sinh",'Lich_su':"Sử", 'Dia_ly':"Địa"},inplace=True)
